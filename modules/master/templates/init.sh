@@ -12,7 +12,6 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=${k3s_channel} K3S_TOKEN=${k3
     --flannel-backend=host-gw \
     --disable local-storage \
     --disable-cloud-controller \
-    --disable servicelb \
     --node-taint node-role.kubernetes.io/master:NoSchedule \
     --kubelet-arg 'cloud-provider=external'
 
