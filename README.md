@@ -29,6 +29,15 @@ export TF_VAR_hcloud_token
 Create a `main.tf` file in a new directory with the following contents:
 
 ```hcl
+terraform {
+  required_providers {
+    hcloud = {
+      source = "hetznercloud/hcloud"
+      version = "1.32.0"
+    }
+  }
+}
+
 variable "hcloud_token" {
   type = string
 }
