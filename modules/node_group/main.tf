@@ -5,7 +5,7 @@ data "template_file" "node_init" {
     k3s_channel = var.k3s_channel
 
     master_ipv4 = var.master_ipv4
-    node_internal_ip = hcloud_server_network.node.*.ip
+    #node_internal_ip = hcloud_server_network.node.*.ip
 
   }
 }
@@ -28,8 +28,4 @@ resource "hcloud_server_network" "node" {
 
 output "node_ipv4" {
   value = hcloud_server.node.*.ipv4_address
-}
-
-output "node_internal_ipv4" {
-  value = hcloud_server_network.node.*.ip
 }
